@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Stjärnstaden Rp - Unban ansökan</title>
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/824381280967327836/1119964286207401994/stjarnstaden_logo_big.png">
+
+	<link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+	<main>
+		<section class="section-contact">
+			<div class="container">
+				<h1>Unabn ansökan</h1>
+				<p>Ibland blir det fel. Kanske man råkat göra något dumt som man sen ångrar sig, eller så har man helt plötsligt blivit avstängd 
+				utan anledning till det. Att överklaga din avstängning innebär att du får möjlighet, ja som det låter att överklaga den och få en ny chans 
+				att spela på servern och bli unbannad. Du kan överklaga både om du blivit felaktigt bannad eller inte.</p>
+				<p>Skicka enbart en överklagan per 24h. Postar du flera kommer istället alla överklagningar bli nekade!</p>
+
+					<form
+					method="POST" 
+					  action="https://script.google.com/macros/s/AKfycbweCCue-RKoqZuDG27kmhlT4qMkY8yBlo5kxfqFXtLUUpXqZAfACxIXG8Ko8POEkbYf/exec"
+>
+					<div class="form-group">
+						<label for="lastname">Länk till din steam profil*</label>
+						<input type="text" name="Länk till din steam profil" id="fname" required class="form-element" placeholder="T.ex. https://steamcommunity.com/profiles/bullen6372/" />
+					</div>
+                    <div class="form-group">
+						<label for="message">Ditt Hex-ID*</label>
+						<input type="text" name="Ditt Hex-ID" id="fname" required class="form-element" placeholder="Du kan hitta ditt hexid här, http://vacbanned.com/" />
+					</div>
+                    <div class="form-group">
+						<label for="age">Vad är din discord tagg?*</label>
+						<input type="text" name="Vad är din discord tagg" id="fname" required class="form-element" placeholder="Moon_boy" />
+					</div>
+					<div class="form-group">
+						<label for="message">Vem var det som bannade dig?*</label>
+						<input name="Vem var det som bannade dig" id="fname" required class="form-element" placeholder="Det står deras namn i anledningen när du försöker gå in på servern."></textarea>
+					</div>
+                    <div class="form-group">
+						<label for="message">Vad står de när du försöker joina?*</label>
+						<input type="text" name="Vad står de när du försöker joina" id="fname" required class="form-element" placeholder="Ditt svar"></textarea>
+					</div>
+                    <div class="form-group full">
+						<label for="message">Beskriv vad som hände när du blev bannad*</label>
+						<textarea name="Beskriv vad som hände när du blev bannad" id="fname" required class="form-element" placeholder="Ditt svar"></textarea>
+					</div>
+                    <div class="form-group full">
+						<label for="message">Hur lång blev din ban?*</label>
+						<textarea name="Hur lång blev din ban" id="fname" required class="form-element" placeholder="Ditt svar"></textarea>
+					</div>
+                    <div class="form-group full">
+						<label for="message">Varför skall vi unbanna dig?*</label>
+						<textarea name="Varför skall vi unbanna dig" id="fname" required class="form-element" placeholder="Ditt svar"></textarea>
+					</div>
+                    <div class="form-group full">
+						<label for="message">Vad har du lärt dig?*</label>
+						<textarea name="Vad har du lärt dig" id="fname" required class="form-element" placeholder="Ditt svar"></textarea>
+					</div>
+					<div class="submit-group">
+						<input type="submit" value="SKICKA IN ANSÖKAN" onClick="validation(event)" onclick = "fun();" />
+					</div>
+				</form>
+				
+				<!---Scriptet--->
+				<script>
+					const scriptURL = 'https://script.google.com/macros/s/AKfycbweCCue-RKoqZuDG27kmhlT4qMkY8yBlo5kxfqFXtLUUpXqZAfACxIXG8Ko8POEkbYf/exec'
+					const form = document.forms['Unban Ansökan - Stjärnstaden RP']
+				  
+					form.addEventListener('submit', e => {
+					  e.preventDefault()
+					  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+						.then(response => console.log('Ansökning är skickad!', response))
+						.catch(error => console.error('Error!', error.message))
+					})
+	
+					function validation() {
+	  //                               big D, throws error 
+	  // var fname = document.getElementByID("fname").value;
+		 var fname = document.getElementById("fname").value;
+	  console.log(fname);
+	  if (fname == "")
+		alert("Fyll i alla svar först!");  
+	}  
+					  </script>
+					  <!---Slutet av Scriptet--->
+
+			</div>
+		</section>
+	</main>
+</body>
+</html>
